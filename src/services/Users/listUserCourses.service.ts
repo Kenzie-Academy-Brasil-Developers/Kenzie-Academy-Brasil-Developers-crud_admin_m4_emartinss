@@ -2,7 +2,7 @@ import { QueryResult } from "pg";
 import { client } from "../../database";
 import { userCourses } from "../../interfaces/usersCouses.interfaces";
 
-export const listUserCoursesService = async (userId: string): Promise<userCourses> => {
+export const listUserCoursesService = async (userId: string): Promise<userCourses[]> => {
   const queryString = `SELECT
   "co".id AS "courseId",
   "co".name AS "courseName",
@@ -23,5 +23,5 @@ WHERE
 
   const queryResult: QueryResult<userCourses> = await client.query(queryString, [userId]);
 
-  return queryResult.rows[0];
+  return queryResult.rows;
 };
