@@ -17,3 +17,4 @@ export const AllUsersLinkedToACourse = z.object({
   courseDescription: z.string(),
   userActiveInCourse: z.boolean(),
 });
+
