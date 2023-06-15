@@ -417,7 +417,6 @@ Você foi o desenvolvedor selecionado para implementar o MVP levando em conta o 
     - Status esperado: _401 UNAUTHORIZED_.
 
   - Caso o token seja inválido:
-
     - Retorno esperado: um objeto contendo a chave **_message_** com a mensagem de erro retornada pelo lib do jwt;
     - Status esperado: _401 UNAUTHORIZED_.
 
