@@ -8,8 +8,8 @@ export const errorHandlerMiddleware = async (err: unknown, req: Request, res: Re
   }
 
   if (err instanceof ZodError) {
-    return res.status(400).json({ message: err.flatten().fieldErrors });
+    return res.status(400).json(err.flatten().fieldErrors);
   }
-   console.error(err);
+  console.error(err);
   return res.status(500).json({ message: "Internal Server Error" });
 };

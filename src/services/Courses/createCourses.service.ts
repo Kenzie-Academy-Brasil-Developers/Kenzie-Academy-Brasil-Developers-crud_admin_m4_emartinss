@@ -3,7 +3,7 @@ import { Courses, CoursesCreate } from "../../interfaces/courses.interfaces";
 import { client } from "../../database";
 import { QueryResult } from "pg";
 
-export const createCoursesService = async (courseData: CoursesCreate) => {
+export const createCoursesService = async (courseData: CoursesCreate):Promise<Courses> => {
   const keys = Object.keys(courseData);
   const values = Object.values(courseData);
 

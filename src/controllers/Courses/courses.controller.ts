@@ -26,7 +26,7 @@ export const enrollUserController = async (req: Request, res: Response): Promise
 
   const enrollUser = await enrollUserService(courseId, userId);
 
-  return res.status(201).json(enrollUser);
+  return res.status(201).json({ message: "User successfully vinculed to course" });
 };
 
 export const deleteEnrollUserController = async (req: Request, res: Response): Promise<Response> => {
@@ -39,9 +39,9 @@ export const deleteEnrollUserController = async (req: Request, res: Response): P
 };
 
 export const getUsersCoursesController = async (req: Request, res: Response): Promise<Response> => {
-  const id = req.params.id
+  const id = req.params.id;
 
-  const userCourses = await getUsersCoursesService(id)
+  const userCourses = await getUsersCoursesService(id);
 
   return res.status(200).json(userCourses);
 };
